@@ -8,12 +8,12 @@ body {
 
 .container {
   position: relative;
-  border: 1px solid #f2efe2;
+  border: 1px solid #ffffff;
   width: 40vw;
   max-width: 60vw;
   margin: 0 auto;
   border-radius: 0.1rem;
-  background: #f2efe2;
+  background: #ffffff;
   padding: 0.2rem 1rem;
   color: #1e2440;
   overflow: scroll;
