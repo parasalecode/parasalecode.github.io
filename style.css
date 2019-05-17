@@ -1,5 +1,5 @@
 body {
-  background: #1e2440;
+  background: #9932CC;
   color: #f2efe2;
   font-size: 16px;
   font-family: 'Kaushan Script', cursive;
@@ -36,7 +36,7 @@ body {
 
 .fa {
   color: white;
-  background: #1e2440;
+  background: #9932CC;
   border-radius: 50%;
   cursor: pointer;
   margin-top: 1rem;
