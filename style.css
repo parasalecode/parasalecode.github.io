@@ -61,13 +61,13 @@ body {
   select {
     width: 70vw !important;
     padding: 3px 35px 5px 5px;
-    background: url('./blek pentha.png') 96% / 13% no-repeat #eee !important;
+    background: url('./parasale.png') 96% / 13% no-repeat #eee !important;
   }
 }
 
 @media (width: 768px) {
   select {
-    background: url('./blek pentha.png') 96% / 7% no-repeat #eee !important;
+    background: url('./parasale.png') 96% / 7% no-repeat #eee !important;
   }
 }
 
@@ -79,7 +79,7 @@ select {
   height: 34px;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: url('./blek pentha.png') 96% / 15% no-repeat #eee;
+  background: url('./parasale.png') 96% / 15% no-repeat #eee;
   font-family: 'Kaushan Script', cursive;
   font-family: 'Shadows Into Light', cursive;
   outline: none;
