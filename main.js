@@ -41,7 +41,7 @@ const dictate = () => {
       paragraph = document.createElement('p');
       container.appendChild(paragraph);
 
-      if (speechToText.includes('what is the time')) {
+      if (speechToText.includes('give me an objection')) {
         speak(getTime);
       };
 
