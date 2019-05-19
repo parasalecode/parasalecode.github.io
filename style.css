@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-  position: relative;
+  position: absolute;right:40px; left:40px; top:100px;
   border: 1px solid #f2efe2;
   width: 40vw;
   max-width: 60vw;
@@ -33,6 +33,17 @@ body {
   border-bottom: 1px dotted black;
   margin: 0px !important;
 }
+
+  .header {
+  padding: 60px;
+  position: absolute;right:40px; left:40px; top:50px;
+  text-align: center;
+  background: #9932CC;
+  color: white;
+  font-size: 20px;
+
+}
+
 
 .fa {
   color: white;
