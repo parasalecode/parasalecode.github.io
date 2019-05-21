@@ -7,6 +7,13 @@ const recognition = new SpeechRecognition();
 recognition.interimResults = true;
 const synth = window.speechSynthesis;
 
+// declare an Ojbection Object that we can play with
+var objection1 = new Object();
+objection1.triggerPhrase = "give me an objection";
+objection1.initialResponse = "sell me the sky";
+objection1.pitchKeyword = "blue";
+objection1.validPitchReponse = "good job";
+objection1.badPitchReponse = "try again";
 
 const icon = document.querySelector('i.fa.fa-microphone')
 let paragraph = document.createElement('p');
@@ -74,9 +81,11 @@ const dictate = () => {
   // recognition.start();
 };
 
+// TODO: change method name from getTime to something more logical
 const getTime = () => {
-  const time = new Date(Date.now());
-  return `the time is ${time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`
+  //const time = new Date(Date.now());
+  //return `the time is ${time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`
+  return objection1.initialResponse;
 };
 
 const getDate = () => {
