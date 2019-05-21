@@ -12,8 +12,11 @@ var objection1 = new Object();
 objection1.triggerPhrase = "give me an objection";
 objection1.initialResponse = "sell me the sky";
 objection1.pitchKeyword = "blue";
-objection1.validPitchReponse = "good job";
-objection1.badPitchReponse = "try again";
+objection1.validPitchResponse = "good job";
+objection1.badPitchResponse = "try again";
+
+// keep track of WHICH objection the user is working with
+var currentObjection = 0;
 
 const icon = document.querySelector('i.fa.fa-microphone')
 let paragraph = document.createElement('p');
@@ -48,8 +51,11 @@ const dictate = () => {
       paragraph = document.createElement('p');
       container.appendChild(paragraph);
 
-      if (speechToText.includes('give me an objection')) {
-        speak(getTime);
+	// conversation round 1
+      if (speechToText.includes('give me objection 1')) {
+      	currentObjection = 1;
+        speak(getObjection);
+	    dictate();
       };
 
       if (speechToText.includes('what is today\'s date')) {
@@ -58,6 +64,11 @@ const dictate = () => {
 
       if (speechToText.includes('what is the weather in')) {
         getTheWeather(speechToText);
+      };
+	    
+	// conversation round 2
+      if (speechToText.includes('response')) {
+        speak(scoreResponse(speechToText));
       };
 
       if (speechToText.includes('open a url')) {
@@ -81,11 +92,15 @@ const dictate = () => {
   // recognition.start();
 };
 
-// TODO: change method name from getTime to something more logical
+// round 1
+const getObjection = () => {
+	if(currentObjection == 1)
+  		return objection1.initialResponse;
+};
+
 const getTime = () => {
-  //const time = new Date(Date.now());
-  //return `the time is ${time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`
-  return objection1.initialResponse;
+  const time = new Date(Date.now());
+  return `the time is ${time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`
 };
 
 const getDate = () => {
@@ -109,6 +124,17 @@ const getTheWeather = (speech) => {
     setVoice(utterThis);
     synth.speak(utterThis);
   });
+};
+
+// round 2
+const scoreResponse = () => {
+	if(currentObjection == 1) {
+	  if (speechToText.includes(objection1.pitchKeyword)) {
+		return objection1.validPitchResponse;
+	  } else {
+		  return objection1.badPitchResponse;
+	  }
+	}
 };
 
 const speak = (action) => {
