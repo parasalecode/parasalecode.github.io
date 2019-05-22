@@ -94,7 +94,7 @@ const dictate = () => {
 
 // round 1
 const getObjection = () => {
-	if(currentObjection == 1)
+	if (currentObjection == 1)
   		return objection1.initialResponse;
 };
 
